@@ -5,8 +5,8 @@ import { TransactionService } from './transaction.service';
 export class TransactionController {
   constructor(private transactionService: TransactionService) {}
 
-  // TODO: change name
-  @Get('address')
+
+  @Get('most-transacted-address')
   public async getMostTransactedAddress(): Promise<string> {
     return this.transactionService.getMostTransactedAddress();
   }
