@@ -12,20 +12,15 @@ This project allows you to track Ethereum transactions in real-time and find the
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your_github_username/ethereum-transactions-tracker.git
+git clone git@github.com:GrigoriGrigoryan/Fintech.git
 ```
 
-2. Go to the project's folder:
-```bash
-cd ethereum-transactions-tracker
-```
-
-3. Install dependencies:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-4. Replace the environment variables in the `.env` file with your configuration:
+3. Replace the environment variables in the `.env` file with your configuration:
 
 ```
 ETHERSCAN_API_KEY=<your_etherscan_api_key>
@@ -35,19 +30,6 @@ POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_USER=user
 POSTGRES_PASSWORD=pass
-```
-
-5. Create the PostgreSQL database and user defined in your `.env` according to the following format:
-
-```bash
-createdb transaction
-createuser -P -d user
-```
-
-6. Apply the database migrations:
-
-```bash
-npm run migration:run
 ```
 
 ## Usage
@@ -60,21 +42,18 @@ npm start
 
 2. To get the Ethereum address with the biggest absolute balance change in the last 100 blocks, send a GET request to the following endpoint:
 
-`GET /api/balance-changes`
+`GET transactions/most-transacted-address
 
 For example, using curl:
 
 ```bash
-curl http://localhost:3000/api/balance-changes
+curl http://localhost:3000/transactions/most-transacted-address
 ```
 
 It will return a JSON object with the information, e.g.:
 
-```json
-{
-  "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-  "balanceChange": "121500000000000000"
-}
+```txt
+ "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
 ```
 
 ## Contributing
